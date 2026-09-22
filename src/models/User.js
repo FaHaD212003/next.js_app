@@ -6,7 +6,6 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide a name"],
       trim: true,
-      maxlength: [50, "Name cannot be more than 50 characters"],
     },
     email: {
       type: String,
@@ -14,10 +13,6 @@ const UserSchema = new mongoose.Schema(
       unique: true,
       lowercase: true,
       trim: true,
-      match: [
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        "Please provide a valid email",
-      ],
     },
     password: {
       type: String,
@@ -31,10 +26,16 @@ const UserSchema = new mongoose.Schema(
       enum: ["user", "admin"],
       default: "user",
     },
+    resetToken: {
+      type: String,
+    },
+    resetTokenExpiry: {
+      type: Date,
+    },
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 export default mongoose.models.User || mongoose.model("User", UserSchema);
