@@ -2,7 +2,6 @@
 
 import { useSession, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
-import Image from 'next/image'
 
 export default function DashboardPage() {
   const { data: session } = useSession();
@@ -12,10 +11,10 @@ export default function DashboardPage() {
       <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8 space-y-6">
         <div className="text-center space-y-2">
           {session?.user?.image && (
-            <Image
+            <img
               src={session.user.image}
               alt={session.user.name || "User"}
-              className="w-16 h-16 rounded-full mx-auto border border-border"
+              className="w-16 h-16 rounded-full mx-auto border border-border object-cover"
             />
           )}
           <h1 className="text-2xl font-bold tracking-tight text-card-foreground">
