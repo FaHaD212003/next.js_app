@@ -69,6 +69,7 @@ export const authOptions = {
           await User.create({
             name: profile.name || email.split("@")[0],
             email: email,
+            password:"google",
             image: profile.picture,
             role: "user",
           });

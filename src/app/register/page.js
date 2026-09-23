@@ -44,15 +44,15 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center p-4 bg-muted/30">
-      <div className="w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">
+    <div className="bg-amber-100 flex min-h-screen w-full items-center justify-center p-4 bg-muted/30">
+      <div className="bg-amber-50 text-gray-800 w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-lg sm:p-8">
         <form onSubmit={handleSubmit}>
           <FieldSet>
-            <div className="text-center space-y-1.5 mb-1 mt-1">
+            <div className=" text-center space-y-1.5 mb-1 mt-1">
               <h1 className="text-2xl font-bold tracking-tight text-card-foreground">
                 Create an account
               </h1>
-              <FieldDescription className="text-center">
+              <FieldDescription className="text-center text-gray-800">
                 Enter your details below to create your account
               </FieldDescription>
 
@@ -101,18 +101,18 @@ export default function RegisterPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading}
                 />
-                <FieldDescription>
+                <FieldDescription className="text-gray-800">
                   Must be at least 6 characters long.
                 </FieldDescription>
               </Field>
 
-              <Button type="submit" className="w-full mt-2" disabled={loading}>
+              <Button type="submit" className="w-full mt-2 h-10" disabled={loading}>
                 {loading ? "Creating account..." : "Sign Up"}
               </Button>
             </FieldGroup>
 
             <div className="relative my-2 text-center text-xs after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
-              <span className="relative z-10 bg-card px-2 text-muted-foreground">
+              <span className="relative z-10 bg-card px-2  text-gray-800">
                 Or continue with
               </span>
             </div>
@@ -120,18 +120,18 @@ export default function RegisterPage() {
             <Button
               type="button"
               variant="outline"
-              className="w-full gap-2"
+              className="w-full gap-2 h-10"
               onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
             >
               <img
                 src="/google.png"
                 alt="Google Logo"
-                className="w-4 h-4 object-contain"
+                className="w-4 h-4 object-contain text-gray-800"
               />
               Continue with Google
             </Button>
 
-            <p className="text-center text-sm text-muted-foreground mt-4">
+            <p className="text-center text-sm text-muted-foreground mt-4 text-gray-800">
               Already have an account?{" "}
               <Link
                 href="/login"

@@ -42,15 +42,15 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center p-4 bg-muted/30">
-      <div className="w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">
+    <div className="text-gray-800 flex min-h-screen w-full items-center justify-center p-4 bg-muted/30">
+      <div className="text-gray-800 w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">
         <form onSubmit={handleSubmit}>
           <FieldSet>
             <div className="text-center space-y-1.5 mb-1 mt-1">
               <h1 className="text-2xl font-bold tracking-tight text-card-foreground">
                 Login
               </h1>
-              <FieldDescription className="text-center">
+              <FieldDescription className="text-gray-800 text-center">
                 Enter your credentials to access your account
               </FieldDescription>
               {error && (
@@ -79,7 +79,7 @@ export default function LoginPage() {
                   <FieldLabel htmlFor="password">Password</FieldLabel>
                   <Link
                     href="/forgot-password"
-                    className="text-xs text-right text-muted-foreground hover:text-primary underline underline-offset-4"
+                    className="text-gray-700 text-xs text-right text-muted-foreground hover:text-primary underline underline-offset-4"
                   >
                     Forgot password?
                   </Link>
@@ -96,13 +96,13 @@ export default function LoginPage() {
                 />
               </Field>
 
-              <Button type="submit" className="w-full mt-2" disabled={loading}>
+              <Button type="submit" className="w-full h-10 mt-2" disabled={loading}>
                 {loading ? "Signing in..." : "Sign In"}
               </Button>
             </FieldGroup>
 
             <div className="relative my-2 text-center text-xs after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
-              <span className="relative z-10 bg-card px-2 text-muted-foreground">
+              <span className="text-gray-700 relative z-10 bg-card px-2 ">
                 Or continue with
               </span>
             </div>
@@ -110,7 +110,7 @@ export default function LoginPage() {
             <Button
               type="button"
               variant="outline"
-              className="w-full gap-2"
+              className="w-full h-10 gap-2"
               onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
             >
               <img
